@@ -1,0 +1,119 @@
+(venv) 
+Owner@BIDESK MINGW64 ~/Desktop/NucampFolder/Python/2-SQL/week3/flask/twitter
+$ flask db migrate
+2022-09-29 23:29:23,892 INFO sqlalchemy.engine.Engine select version()
+INFO  [sqlalchemy.engine.Engine] select version()
+2022-09-29 23:29:23,892 INFO sqlalchemy.engine.Engine [raw sql] {}
+INFO  [sqlalchemy.engine.Engine] [raw sql] {}
+2022-09-29 23:29:23,894 INFO sqlalchemy.engine.Engine select current_schema()
+INFO  [sqlalchemy.engine.Engine] select current_schema()
+2022-09-29 23:29:23,895 INFO sqlalchemy.engine.Engine [raw sql] {}
+INFO  [sqlalchemy.engine.Engine] [raw sql] {}
+2022-09-29 23:29:23,897 INFO sqlalchemy.engine.Engine show standard_conforming_strings
+INFO  [sqlalchemy.engine.Engine] show standard_conforming_strings
+2022-09-29 23:29:23,897 INFO sqlalchemy.engine.Engine [raw sql] {}
+INFO  [sqlalchemy.engine.Engine] [raw sql] {}
+INFO  [alembic.runtime.migration] Context impl PostgresqlImpl.
+INFO  [alembic.runtime.migration] Will assume transactional DDL.
+2022-09-29 23:29:23,900 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+INFO  [sqlalchemy.engine.Engine] BEGIN (implicit)
+2022-09-29 23:29:23,901 INFO sqlalchemy.engine.Engine select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s
+INFO  [sqlalchemy.engine.Engine] select relname from pg_class c join pg_namespace n on n.oid=c.relnamespace where pg_catalog.pg_table_is_visible(c.oid) and relname=%(name)s    
+2022-09-29 23:29:23,902 INFO sqlalchemy.engine.Engine [generated in 0.00078s] {'name': 'alembic_version'}
+INFO  [sqlalchemy.engine.Engine] [generated in 0.00078s] {'name': 'alembic_version'}
+2022-09-29 23:29:23,906 INFO sqlalchemy.engine.Engine SELECT alembic_version.version_num
+FROM alembic_version
+INFO  [sqlalchemy.engine.Engine] SELECT alembic_version.version_num
+FROM alembic_version
+2022-09-29 23:29:23,907 INFO sqlalchemy.engine.Engine [generated in 0.00089s] {}
+INFO  [sqlalchemy.engine.Engine] [generated in 0.00089s] {}
+2022-09-29 23:29:23,912 INFO sqlalchemy.engine.Engine SELECT c.relname FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = %(schema)s AND c.relkind 
+in ('r', 'p')
+INFO  [sqlalchemy.engine.Engine] SELECT c.relname FROM pg_class c JOIN pg_namespace n ON n.oid = c.relnamespace WHERE n.nspname = %(schema)s AND c.relkind in ('r', 'p')        
+2022-09-29 23:29:23,913 INFO sqlalchemy.engine.Engine [generated in 0.00082s] {'schema': 'public'}
+INFO  [sqlalchemy.engine.Engine] [generated in 0.00082s] {'schema': 'public'}
+2022-09-29 23:29:23,916 INFO sqlalchemy.engine.Engine ROLLBACK
+INFO  [sqlalchemy.engine.Engine] ROLLBACK
+Traceback (most recent call last):
+  File "C:\Users\Owner\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "C:\Users\Owner\AppData\Local\Programs\Python\Python310\lib\runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\Scripts\flask.exe\__main__.py", line 7, in <module>
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\flask\cli.py", line 990, in main
+    cli.main(args=sys.argv[1:])
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\flask\cli.py", line 596, in main
+    return super().main(*args, **kwargs)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\click\core.py", line 1055, in main
+    rv = self.invoke(ctx)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\click\core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\click\core.py", line 1657, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\click\core.py", line 1404, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\click\core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\click\decorators.py", line 26, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\flask\cli.py", line 440, in decorator
+    return __ctx.invoke(f, *args, **kwargs)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\click\core.py", line 760, in invoke
+    return __callback(*args, **kwargs)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\flask_migrate\cli.py", line 91, in migrate
+    _migrate(directory, message, sql, head, splice, branch_label, version_path,
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\flask_migrate\__init__.py", line 92, in wrapped
+    f(*args, **kwargs)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\flask_migrate\__init__.py", line 132, in migrate
+    command.revision(config, message, autogenerate=True, sql=sql,
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\command.py", line 212, in revision
+    script_directory.run_env()
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\script\base.py", line 490, in run_env
+    util.load_python_file(self.dir, "env.py")
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\util\pyfiles.py", line 97, in load_python_file
+    module = load_module_py(module_id, path)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\util\compat.py", line 184, in load_module_py
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\flask\twitter\migrations\env.py", line 91, in <module>
+    run_migrations_online()
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\flask\twitter\migrations\env.py", line 85, in run_migrations_online
+    context.run_migrations()
+  File "<string>", line 8, in run_migrations
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\runtime\environment.py", line 813, in run_migrations
+    self.get_context().run_migrations(**kw)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\runtime\migration.py", line 549, in run_migrations
+    for step in self._migrations_fn(heads, self):
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\command.py", line 188, in retrieve_migrations
+    revision_context.run_autogenerate(rev, context)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\autogenerate\api.py", line 462, in run_autogenerate
+    self._run_environment(rev, migration_context, True)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\autogenerate\api.py", line 501, in _run_environment
+    compare._populate_migration_script(
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\autogenerate\compare.py", line 25, in _populate_migration_script
+    _produce_net_changes(autogen_context, upgrade_ops)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\autogenerate\compare.py", line 54, in _produce_net_changes
+    comparators.dispatch("schema", autogen_context.dialect.name)(
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\util\langhelpers.py", line 307, in go
+    fn(*arg, **kw)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\autogenerate\compare.py", line 86, in _autogen_for_tables
+    [(table.schema, table.name) for table in autogen_context.sorted_tables]
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\util\langhelpers.py", line 234, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\alembic\autogenerate\api.py", line 382, in sorted_tables
+    result.extend(m.sorted_tables)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\sqlalchemy\sql\schema.py", line 4553, in sorted_tables
+    return ddl.sort_tables(
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\sqlalchemy\sql\ddl.py", line 1208, in sort_tables
+    for (t, fkcs) in sort_tables_and_constraints(
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\sqlalchemy\sql\ddl.py", line 1286, in sort_tables_and_constraints
+    dependent_on = fkc.referred_table
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\sqlalchemy\sql\schema.py", line 3671, in referred_table
+    return self.elements[0].column.table
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 1097, in __get__
+    obj.__dict__[self.__name__] = result = self.fget(obj)
+  File "C:\Users\Owner\Desktop\NucampFolder\Python\2-SQL\week3\venv\lib\site-packages\sqlalchemy\sql\schema.py", line 2376, in column
+    raise exc.NoReferencedTableError(
+sqlalchemy.exc.NoReferencedTableError: Foreign key associated with column 'tweets.user_id' could not find table 'users' with which to generate a foreign key to target column 'id'
+(venv) 
