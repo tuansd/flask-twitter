@@ -43,9 +43,22 @@ class Tweet(db.Model):
         default=datetime.datetime.utcnow,
         nullable=False
     )
+
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     liking_users = db.relationship(
         'User', secondary=likes_table,
         lazy='subquery',
         backref=db.backref('liked_tweets', lazy=True)
     )
+
+    def __init__(self, content: str, user_id: int):
+        self.content = content
+        self.user_id = user_id
+
+    def serialize(self):
+        return {
+            'id': self.id,
+            'content': self.content,
+            'created_at': self.created_at.isoformat(),
+            'user_id': self.user_id
+        }

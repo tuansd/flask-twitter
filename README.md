@@ -19,8 +19,15 @@ $ flask db migrate
 Then we can apply the forward migration with:
 $ flask db upgrade
 
+Create variable for enviroment:
+$ export FLASK_ENV=development
+
+Run Flask:
+$ flask run
+
 <!-- models.py -->
-###################################################################################
+#######################################################
+<!-- -->
 import datetime
 from flask_sqlalchemy import SQLAlchemy
 
@@ -74,4 +81,4 @@ class Tweet(db.Model):
     )
 
 
-#######################################################################################
+#############################################################
