@@ -1,8 +1,14 @@
 
+Run Flask:
+$ flask run
+
 <!-- Activate the virtual environment if it is not already activated: -->
 CLI; To activate enviroment:
 
 $ . venv/scripts/activate
+
+run docker image
+$ docker compose up -d
 
 CLI; Create a database named twitter:
 
@@ -19,6 +25,10 @@ $ flask db migrate
 Then we can apply the forward migration with:
 $ flask db upgrade
 
+To reset the database
+
+$ cd flask
+$ python seed.py
 Create variable for enviroment:
 $ export FLASK_ENV=development
 
